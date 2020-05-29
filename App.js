@@ -6,11 +6,5 @@ import { NavigationContainer } from "@react-navigation/native";
 export default function App() {
   const [showLogin, setShowLogin] = useState(true);
 
-  return showLogin ? (
-    <NavigationContainer>
-      <Login />
-    </NavigationContainer>
-  ) : (
-    <Navigation />
-  );
+  return showLogin ? <Login /> : <Navigation />;
 }

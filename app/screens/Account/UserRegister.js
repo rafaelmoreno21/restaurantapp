@@ -2,11 +2,32 @@ import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet, ScrollView, Image } from "react-native";
 import { Button } from "react-native-elements";
 import { useNavigation } from "@react-navigation/native";
-import Login from "../Account/Login";
+
 export default function UserRegister() {
   const navigation = useNavigation();
 
-  return <Login />;
+  return (
+    <ScrollView centerContent={true} style={styles.viewBody}>
+      <Image
+        style={styles.image}
+        source={require("../../../assets/img/account10.png")}
+        resizeMode="contain"
+      />
+      <Text style={styles.title}>Consulta tu perfil</Text>
+      <Text style={styles.description}>
+        Cual seria para ti el mejor restaurante? Visualiza los mejores
+        restaurantes y vota cual te ha gustado más
+      </Text>
+      <View style={styles.viewBtn}>
+        <Button
+          buttonStyle={styles.btnStyle}
+          containerStyle={styles.btnContainer}
+          title="Visualiza tu perfil"
+          onPress={() => navigation.navigate("login")}
+        />
+      </View>
+    </ScrollView>
+  );
 }
 
 const styles = StyleSheet.create({
